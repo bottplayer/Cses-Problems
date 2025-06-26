@@ -1,0 +1,1 @@
+{"name":"Local: PlanetQueries","url":"c:\\Users\\ganya\\OneDrive\\Documents\\CSES\\Graph\\PlanetQueries.cpp","tests":[{"id":1750491906065,"input":"4 3\n2 1 1 4\n1 2\n3 4\n4 1","output":"1\n2\n4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\ganya\\OneDrive\\Documents\\CSES\\Graph\\PlanetQueries.cpp","group":"local","local":true}
