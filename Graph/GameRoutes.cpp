@@ -1,45 +1,54 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define ll long long 
+#define ll long long
 #define pb push_back
 #define mod 1000000007
-int main(){
-    ll n,m;
-    cin>>n>>m;
-    vector<ll>indegree(n+1,0);
-    vector<vector<ll>>adj(n+1);
-    for(ll i=0;i<m;i++){
-        ll u,v;
-        cin>>u>>v;
+int main()
+{
+    ll n, m;
+    cin >> n >> m;
+    vector<ll> indegree(n + 1, 0);
+    vector<vector<ll>> adj(n + 1);
+    for (ll i = 0; i < m; i++)
+    {
+        ll u, v;
+        cin >> u >> v;
         adj[u].pb(v);
         indegree[v]++;
     }
-    vector<ll>topo;
-    queue<ll>q;
-    for(ll i=1;i<=n;i++){
-        if(indegree[i]==0){
+    vector<ll> topo;
+    queue<ll> q;
+    for (ll i = 1; i <= n; i++)
+    {
+        if (indegree[i] == 0)
+        {
             topo.pb(i);
             q.push(i);
         }
     }
-    while(!q.empty()){
-        int curr=q.front();
+    while (!q.empty())
+    {
+        int curr = q.front();
         q.pop();
-        for(auto it: adj[curr]){
+        for (auto it : adj[curr])
+        {
             indegree[it]--;
-            if(indegree[it]==0){
+            if (indegree[it] == 0)
+            {
                 q.push(it);
                 topo.pb(it);
             }
         }
     }
-    vector<ll>ways(n+1,0);
-    ways[1]=1;
-    for(auto t: topo){
-        for(auto it: adj[t]){
-            ways[it]+=(ways[t])%mod;
+    vector<ll> ways(n + 1, 0);
+    ways[1] = 1;
+    for (auto t : topo)
+    {
+        for (auto it : adj[t])
+        {
+            ways[it] += (ways[t]) % mod;
         }
     }
-    cout<<ways[n]%mod<<endl;
+    cout << ways[n] % mod << endl;
     return 0;
 }

@@ -18,8 +18,8 @@ int main() {
         cin >> u >> v >> w;
         adj[u].push_back({v, w});
     }
-
-    using T = tuple<ll, ll, ll>;  // {cost_so_far, max_edge, node}
+    
+using T = tuple<ll, ll, ll>;  // {cost_so_far, max_edge, node}
     priority_queue<T, vector<T>, greater<T>> pq;
     unordered_map<pair<ll, ll>, ll, pair_hash> mp;
 

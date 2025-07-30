@@ -5,8 +5,7 @@ int main()
     int n;
     cin >> n;
     int count = 0;
-    while (n > 0)
-    {
+    while (n > 0){
         string s = "";
         int temp = n;
         while (temp > 0)

@@ -2,9 +2,7 @@
 using namespace std;
 #define ll long long
 #define mod 1000000007
-
-ll memo(ll n, vector<ll> &dp)
-{
+ll memo(ll n, vector<ll> &dp){
     if (n == 0)
         return 1;
     if (n < 0)
@@ -18,9 +16,7 @@ ll memo(ll n, vector<ll> &dp)
 
     return dp[n] = w;
 }
-
-int main()
-{
+int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 

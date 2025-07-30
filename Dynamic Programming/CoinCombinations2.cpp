@@ -11,12 +11,10 @@ int memoise(int ind, int sum, int x, int prev, vector<int> &v, vector<vector<int
     if (dp[ind][sum] != -1)
         return dp[ind][sum];
     int ways = 0;
-    if (prev == -1 || prev <= v[ind])
-    {
+    if (prev == -1 || prev <= v[ind]){
         ways += memoise(ind + 1, sum, x, prev, v, dp);
     }
-    if (sum + v[ind] <= x && (prev == -1 || prev <= v[ind]))
-    {
+    if (sum + v[ind] <= x && (prev == -1 || prev <= v[ind])){
         ways += memoise(ind + 1, sum + v[ind], x, v[ind], v, dp);
         ways += memoise(ind, sum + v[ind], x, v[ind], v, dp);
     }

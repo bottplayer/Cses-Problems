@@ -12,8 +12,9 @@ ll memoise(ll ind, ll sum, ll x, vector<ll> &v, vector<vector<ll>> &dp)
         return dp[ind][sum];
     ll ways = 0;
     // ways += memoise(ind + 1, sum, x, v, dp);
-    ways += memoise(ind + 1, sum , x, v, dp);
-    for(int i=0;i<v.size();i++){
+    ways += memoise(ind + 1, sum, x, v, dp);
+    for (int i = 0; i < v.size(); i++)
+    {
         ways += memoise(ind, sum + v[ind], x, v, dp);
     }
     return dp[ind][sum] = ways % mod;

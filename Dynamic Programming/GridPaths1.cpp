@@ -14,10 +14,8 @@ int main()
     dp[0][0] = 1;
     if (n == 1 && s[0][0] == '*')
         dp[0][0] = 0;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < n; j++)
-        {
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < n; j++){
             if (i == 0 && j == 0)
                 continue;
             if (s[i][j] == '*')

@@ -11,8 +11,7 @@ int memoise(int sum, vector<int> &v, vector<int> &dp)
         return dp[sum];
 
     int ans = INT_MAX;
-    for (int i = 0; i < v.size(); i++)
-    {
+    for (int i = 0; i < v.size(); i++){
         int res = memoise(sum - v[i], v, dp);
         if (res != INT_MAX)
             ans = min(ans, 1 + res);
